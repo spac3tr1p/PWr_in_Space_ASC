@@ -34,3 +34,13 @@ File `data.csv` should be created.
 python chart.py
 ```
 
+Modifying `Kp`, `Ki`, `Kd` in **pid.c** will change the output and the chart itself.
+
+```c
+// pid.c
+#define Kp 64.0f
+#define Ki 5.0f
+#define Kd 10.0f
+```
+
+
