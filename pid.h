@@ -1,3 +1,8 @@
+/**
+ * @file pid.h
+ * @brief Header of pid.c: Algorithm for PID controller.
+*/
+
 #ifndef PID_H
 #define PID_H
 /**********************************************************************************************************************/
@@ -17,6 +22,9 @@
 /* TYPES                                                                                                              */
 /**********************************************************************************************************************/
 
+/**
+ * @brief Structure of PID controller status
+ */
 typedef struct {
 
   float prev_error;
@@ -54,7 +62,7 @@ typedef struct {
 * D = (error - prev_error) / dt
 * u = Kp * error + Ki * I + Kd * D
 *
-* @param[in,out] pid: struct with all necessary variables
+* @param[in, out] pid: struct with all necessary variables
 */
 void PID_Iteration(PIDType* const pid);
 
@@ -65,7 +73,7 @@ void PID_Iteration(PIDType* const pid);
 * omega += u * dt
 * theta += omega * dt
 
-* @param[in,out] pid: struct with all necessary variables
+* @param[in, out] pid: struct with all necessary variables
 */
 void PID_ThetaOmegaUpdate(PIDType* const pid);
 
