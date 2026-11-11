@@ -49,7 +49,7 @@ typedef struct {
 * @brief Calculates current error, I, D, and u
 * 
 * Calculations:
-* error = θ_target - θ
+* error = theta_target - theta
 * I += error * dt
 * D = (error - prev_error) / dt
 * u = Kp * error + Ki * I + Kd * D
@@ -62,8 +62,8 @@ void PID_Iteration(PIDType* const pid);
 /**
 * @brief Updates Theta and Omega
 * model:
-* ω += u * dt
-* θ += ω * dt
+* omega += u * dt
+* theta += omega * dt
 
 * @param[in,out] pid: struct with all necessary variables
 */
