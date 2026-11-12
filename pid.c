@@ -11,9 +11,9 @@
 /**********************************************************************************************************************/
 /* DEFINES                                                                                                            */
 /**********************************************************************************************************************/
-#define Kp 64.0f
-#define Ki 5.0f
-#define Kd 10.0f
+#define KP 4.0f
+#define KI 0.0f
+#define KD 4.0f
 
 #define dt     (1.0f / UPDATE_HZ) 
 #define U_MAX  20.0f
@@ -52,7 +52,7 @@ void PID_Iteration(PIDType* const pid)
   pid->I += error * dt;
   pid->D = (error - pid->prev_error) / dt;
 
-  float m = Kp * error + Ki * pid->I + Kd * pid->D;
+  float m = KP * error + KI * pid->I + KD * pid->D;
 
   if (m > U_MAX)      
   { 
@@ -71,7 +71,7 @@ void PID_ThetaOmegaUpdate(PIDType* const pid)
 {
   pid->omega += pid->u * dt;
   pid->theta += pid->omega * dt;
-} // end: pid_angleChange
+} // end: PID_ThetaOmegaUpdate
 
 
 
