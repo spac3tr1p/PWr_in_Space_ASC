@@ -39,5 +39,5 @@ Modifying `KP`, `KI`, `KD` in **pid.c** will change the output and the chart its
 #define KI 0.0f
 #define KD 4.0f
 ```
-Result of `KD` = 4.0f, `KI` = 0.0f, `KD` = 4.0f:
+Result of `KP` = 4.0f, `KI` = 0.0f, `KD` = 4.0f:
 ![Simulation result](chart.png)
