@@ -11,37 +11,32 @@ git clone https://github.com/spac3tr1p/PWr_in_Space_ASC
 cd PWr_in_Space_ASC
 ```
 
-Create environment and install dependencies:
+Install dependencies and build executable program (requires uv and cmake):
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install pandas matplotlib
+cmake -S . -B build 
+cmake --build build
+uv sync
 ```
 
 ## Run
-
-Compile program (requires gcc)
-
+Run this command to generate `data.csv` file:
 ```bash
-gcc main.c pid.c -o program
-./program
+./build/PWr_in_Space_ASC
 ```
-
-File `data.csv` should be created.
+Run this command to generate `chart.png` file:
 
 ```bash
-python chart.py
+uv run chart.py
 ```
 File `chart.png` should be created.
 
 Modifying `KP`, `KI`, `KD` in **pid.c** will change the output and the chart itself.
 
 ```c
+// pid.c
 #define KP 4.0f
 #define KI 0.0f
 #define KD 4.0f
-
 ```
-
-
+![Simulation result](chart.png)
