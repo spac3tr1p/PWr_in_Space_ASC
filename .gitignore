@@ -1,4 +1,5 @@
 *.csv
+*.png
 build/
 .venv/
 .vscode/
